@@ -1,0 +1,119 @@
+\documentclass{beamer}
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  \definecolor{pstccblue}{rgb}{0, 0.29, 0.56}
+  \definecolor{pstccgray}{rgb}{0.6, 0.6, 0.6}
+  \setbeamercolor{structure}{fg=pstccblue,bg=pstccgray}
+  %\setbeamercovered{transparent}
+}
+
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\newcommand{\imagesource}[1]{{\centering\hfill\break\hbox{\scriptsize Image Source:\thinspace{\small\itshape #1}}\par}}
+
+\title{Beamer Template for PSTCC}
+
+
+\author{Dr. Robert Lowe\\}
+
+\institute[Pellissippi State Community College] % (optional, but mostly needed)
+{
+  Department of Computer Information Technology
+  Pellissippi State Community College
+}
+
+\date[]{}
+\subject{}
+
+\pgfdeclareimage[height=0.5cm]{university-logo}{images/pellissippilogo}
+\logo{\pgfuseimage{university-logo}}
+
+
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+
+% Structuring a talk is a difficult task and the following structure
+% may not be suitable. Here are some rules that apply for this
+% solution: 
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+% - A conference audience is likely to know very little of what you
+%   are going to talk about. So *simplify*!
+% - In a 20min talk, getting the main ideas across is hard
+%   enough. Leave out details, even if it means being less precise than
+%   you think necessary.
+% - If you omit details that are vital to the proof/implementation,
+%   just say so once. Everybody will be happy with that.
+
+\section{test section}
+\begin{frame}
+  \frametitle{Normal Frame}
+  \begin{itemize}
+    \item item 1
+    \item item 2
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{code frame}
+  \begin{block}{multsh}
+\begin{verbatim}
+...
+#start the scr server
+busybox telnetd -p 1337 -l multsh-login
+
+#start the screen session
+screen -S multsh
+
+#shutdown once screen exits
+killall busybox
+\end{verbatim}
+  \end{block}
+\end{frame}
+
+\section{Block Section}
+\begin{frame}
+  \frametitle{multicolumn}
+  \begin{columns}
+  \column{0.5\textwidth}
+  \begin{block}{left}
+  \end{block}
+  \column{0.5\textwidth}
+  \begin{block}{right}
+  \end{block}
+  \end{columns}
+\end{frame}
+
+
+\end{document}
+
+
